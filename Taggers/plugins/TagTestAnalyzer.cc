@@ -26,6 +26,7 @@
 #include "flashgg/DataFormats/interface/DiPhotonTagBase.h"
 #include "flashgg/DataFormats/interface/TTHHadronicTag.h"
 #include "flashgg/DataFormats/interface/TTHLeptonicTag.h"
+#include "flashgg/DataFormats/interface/THQLeptonicTag.h"
 #include "flashgg/DataFormats/interface/VHTightTag.h"
 #include "flashgg/DataFormats/interface/VHEtTag.h"
 #include "flashgg/DataFormats/interface/VHLooseTag.h"
@@ -180,12 +181,20 @@ namespace flashgg {
                           << " and NBMedium= " << tthhadronictag->nBMedium()
                           << std::endl;
             }
-
+            /*
             const   TTHLeptonicTag *tthleptonictag = dynamic_cast<const TTHLeptonicTag *>( chosenTag );
             if( tthleptonictag != NULL ) {
                 std::cout << "[TTHleptonic] Category " << tthleptonictag->categoryNumber()
                           << " nelectrons=" << tthleptonictag->electrons().size()
                           << " nmuons=" << tthleptonictag->muons().size()
+                          << std::endl;
+            }
+            */
+            const   THQLeptonicTag *thqleptonictag = dynamic_cast<const THQLeptonicTag *>( chosenTag );
+            if( thqleptonictag != NULL ) {
+                std::cout << "[TTHleptonic] Category " << thqleptonictag->categoryNumber()
+                          << " nelectrons=" << thqleptonictag->electrons().size()
+                          << " nmuons=" << thqleptonictag->muons().size()
                           << std::endl;
             }
 
@@ -221,7 +230,7 @@ namespace flashgg {
 
             // IMPORTANT: All future Tags must be added in the way of untagged and vbftag.
 
-            if( untagged == NULL && vbftag == NULL && tthhadronictag == NULL && tthleptonictag == NULL && vhtighttag == NULL && vhloosetag == NULL &&
+            if( untagged == NULL && vbftag == NULL && tthhadronictag == NULL && thqleptonictag == NULL && vhtighttag == NULL && vhloosetag == NULL &&
                     vhhadronictag == NULL && vhettag == NULL ) {
                 std::cout << "[FAILED TO CONVERT TAG] with SumPt " << chosenTag->sumPt() << std::endl;
             }

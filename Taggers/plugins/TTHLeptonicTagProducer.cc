@@ -306,8 +306,9 @@ namespace flashgg {
 
             hasGoodElec = ( goodElectrons.size() > 0 );
             hasGoodMuons = ( goodMuons.size() > 0 );
+            //if( !hasGoodElec && !hasGoodMuons ) { continue; }
             if( !hasGoodElec && !hasGoodMuons ) { continue; }
-
+            if( hasGoodElec && hasGoodMuons ) { continue; }
             numMuonJetsdR.clear();
             numElectronJetsdR.clear();
             muonJets = false;
@@ -421,17 +422,20 @@ namespace flashgg {
                 if( check >= jetsNumberThreshold_ ) {ElectronJets = true;}
             }
 
-            /*
+            
             std::cout << " TTHLeptonicTagProducer tagBJets.size()=" << tagBJets.size()
                       << " tagJets.size()=" << tagJets.size()
                       << " photonSelection=" << photonSelection
                       << " tagMuons.size()=" << tagMuons.size() << " muonJets=" << muonJets
                       << " tagElectrons.size()="<< tagElectrons.size() << " ElectronJets=" << ElectronJets
                       << std::endl;
-            */
+            
 
+            //if( tagBJets.size() >= bjetsNumberThreshold_ && tagJets.size() >= jetsNumberThreshold_ && photonSelection
+            //&& ( ( tagMuons.size() > 0 && muonJets ) || ( tagElectrons.size() > 0 && ElectronJets ) ) ) 
             if( tagBJets.size() >= bjetsNumberThreshold_ && tagJets.size() >= jetsNumberThreshold_ && photonSelection
-                    && ( ( tagMuons.size() > 0 && muonJets ) || ( tagElectrons.size() > 0 && ElectronJets ) ) ) {
+                && ( ( (tagMuons.size() == 1 && muonJets) and  (tagElectrons.size() == 0 && !ElectronJets) )  || ( (tagMuons.size() == 0 && !muonJets)  and  (tagElectrons.size() == 1 && ElectronJets) ) ) )
+                {
                 //                std::cout << " TTHLeptonicTagProducer TAGGED " << std::endl;
                 if( tagElectrons.size() > 0 && ElectronJets ) {
                     //                    std::cout << "including electron weights" << std::endl;

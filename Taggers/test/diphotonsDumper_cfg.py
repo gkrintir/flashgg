@@ -8,7 +8,7 @@ process = cms.Process("Analysis")
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.source = cms.Source("PoolSource",
                             fileNames=cms.untracked.vstring(
-        "file:myMicroAODOutputFile.root"        
+        "file:myTagOutputFile.root"        
         )
 )
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
@@ -21,7 +21,7 @@ process.TFileService = cms.Service("TFileService",
 from flashgg.Taggers.flashggPreselectedDiPhotons_cfi import flashggPreselectedDiPhotons
 process.kinPreselDiPhotons = flashggPreselectedDiPhotons.clone(
 cut=cms.string(
-        "leadingPhoton.pt > 40 && subLeadingPhoton.pt > 30"
+        "leadingPhoton.pt > 20 && subLeadingPhoton.pt > 30"
         " && abs(leadingPhoton.superCluster.eta)<2.5 && abs(subLeadingPhoton.superCluster.eta)<2.5 "
         " && ( abs(leadingPhoton.superCluster.eta)<1.4442 || abs(leadingPhoton.superCluster.eta)>1.566)"
         " && ( abs(subLeadingPhoton.superCluster.eta)<1.4442 || abs(subLeadingPhoton.superCluster.eta)>1.566)"
@@ -31,7 +31,7 @@ cut=cms.string(
 process.load("flashgg.Taggers.diphotonDumper_cfi") ##  import diphotonDumper 
 import flashgg.Taggers.dumperConfigTools as cfgTools
 
-process.diphotonDumper.src = "kinPreselDiPhotons"
+process.diphotonDumper.src = "flashggPreselectedDiPhotons"
 
 process.diphotonDumper.dumpTrees = True
 process.diphotonDumper.dumpWorkspace = False

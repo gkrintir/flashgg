@@ -82,9 +82,11 @@ namespace flashgg {
                                                                                                eta_J2(),phi_J2()) : -9999. );}
         float dR_partonMatchingToJ3() const { return ( hasSubSubLeadingJet() && hasClosestPartonToSubSubLeadingJet() ? deltaR(closestPartonToSubSubLeadingJet()->eta(),closestPartonToSubSubLeadingJet()->phi(),
                                                                                                eta_J3(),phi_J3()) : -9999. );}
-                  
-
-    //MVA vars
+        //DeltaRs between GenJet and partons
+        float dR_genJetMatchingTopartonJ1() const {  if (hasClosestGenJetToLeadingJet() &&  hasClosestPartonToLeadingJet())
+                return ( deltaR(closestGenJetToLeadingJet()->eta(),closestGenJetToLeadingJet()->phi(), closestPartonToLeadingJet()->eta(),closestPartonToLeadingJet()->phi())); else return -9999.;}  
+        
+        //MVA vars
         //Hemispheres
         //Flashgg jets
         int hemisphere_J1() const { if (hasLeadingJet()) { return ( leadingJet()->eta() > 0 ? 1 : -1 ); }else{ return 0;}}
@@ -500,7 +502,7 @@ namespace flashgg {
         float dR_DP_123_Partons() const {if (hasLeadingParton() && hasSubLeadingParton() && hasSubSubLeadingParton()) {
                                        return deltaR(diPhoton()->eta(),diPhoton()->phi(),(leadingParton()->p4()+subLeadingParton()->p4()+subSubLeadingParton()->p4()).eta(),
                                                     (leadingParton()->p4()+subLeadingParton()->p4()+subSubLeadingParton()->p4()).phi());}else{return -9999.;}}
-//ADD TO STRUCTS AND SCRIPT 
+        //ADD TO STRUCTS AND SCRIPT 
         //Pt variable methods
         float missingP4_dPhi_jjj_FggJet() const {if (hasLeadingJet() && hasSubLeadingJet() && hasSubSubLeadingJet()) {
                                                  return fabs(deltaPhi((leadingJet()->p4() + subLeadingJet()->p4() + subSubLeadingJet()->p4() + diPhoton()->p4()).phi(), 

@@ -12,7 +12,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_mc')
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
 #process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32( 100 )
 
 # Uncomment the following if you notice you have a memory leak
@@ -22,7 +22,10 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 #                                        monitorPssAndPrivate = cms.untracked.bool(True)
 #                                       )
 
-process.source = cms.Source ("PoolSource",fileNames = cms.untracked.vstring("file:myMicroAODOutputFile.root"))
+process.source = cms.Source ("PoolSource",fileNames = cms.untracked.vstring(
+        "root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISpring15-ReMiniAOD-BetaV7-25ns/Spring15BetaV7/GluGluHToGG_M-125_13TeV_powheg_pythia8/RunIISpring15-ReMiniAOD-BetaV7-25ns-Spring15BetaV7-v0-RunIISpring15MiniAODv2-74X_mcRun2_asymptotic_v2-v1/151021_152108/0000/myMicroAODOutputFile_2.root"
+        #"root://cmsxrootd.fnal.gov//store/user/gkrintir/flashgg/RunIISpring15-ReMiniAOD-BetaV7-25ns/Spring15BetaV7/THQ_HToGG_13TeV-madgraph-pythia8_TuneCUETP8M1/RunIISpring15-ReMiniAOD-BetaV7-25ns-Spring15BetaV7-v0-RunIISpring15MiniAODv2-74X_mcRun2_asymptotic_v2-v1/151203_202839/0000/myMicroAODOutputFile_1.root"
+        ))
 
 process.load("flashgg/Taggers/flashggTagSequence_cfi")
 process.load("flashgg/Taggers/flashggTagTester_cfi")

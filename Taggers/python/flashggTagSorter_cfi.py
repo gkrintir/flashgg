@@ -5,10 +5,11 @@ flashggTagSorter = cms.EDProducer('FlashggTagSorter',
                                   # Top of list is highest priority
                                   # Optionally can add category ranges if priority depends on category number
                                   TagPriorityRanges = cms.VPSet(
+                                                                cms.PSet(TagName = cms.InputTag('flashggTHQLeptonicTag')),
                                                                 cms.PSet(TagName = cms.InputTag('flashggTTHLeptonicTag')), #JM put this first
                                                                 cms.PSet(TagName = cms.InputTag('flashggTTHHadronicTag')), #JM put this first also for the time beeing
-#                                                                cms.PSet(TagName = cms.InputTag('flashggVHTightTag')),
-#                                                                cms.PSet(TagName = cms.InputTag('flashggVHLooseTag')),
+                                                                cms.PSet(TagName = cms.InputTag('flashggVHTightTag')),
+                                                                cms.PSet(TagName = cms.InputTag('flashggVHLooseTag')),
 #                                                                cms.PSet(TagName = cms.InputTag('flashggVHEtTag')),
 #                                                               cms.PSet(TagName = cms.InputTag('flashggVBFTag'),
 #                                                                         MinCategory = cms.untracked.int32(0),
@@ -20,8 +21,8 @@ flashggTagSorter = cms.EDProducer('FlashggTagSorter',
                                                                          MaxCategory = cms.untracked.int32(4)
                                                                          )
                                                                 ),
-                                  massCutUpper=cms.untracked.double(180.),
-                                  massCutLower=cms.untracked.double(100)
+                                  massCutUpper=cms.double(180.),
+                                  massCutLower=cms.double(100)
                                   )
 
 #                                  TagVectorTag = cms.untracked.VInputTag(
