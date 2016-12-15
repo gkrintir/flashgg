@@ -1,0 +1,34 @@
+{
+    "cont": false, 
+    "resubMissing": false, 
+    "jobExe": "cmsRun", 
+    "njobs": 500, 
+    "verbose": false, 
+    "selectedDatasetPatterns": null, 
+    "hadd": false, 
+    "cmdLine": "campaign=RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2_Training", 
+    "stageCmd": "guess", 
+    "outputDir": "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training", 
+    "asyncLsf": true, 
+    "maxResub": 3, 
+    "ncpu": 8, 
+    "copy_proxy": true, 
+    "processes": {
+        "vbf_m125": [
+            "/VBFHToGG_M125_13TeV_amcatnlo_pythia8/sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae/USER"
+        ], 
+        "gamJet": [
+            "/GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8"
+        ]
+    }, 
+    "useTarball": false, 
+    "stageTo": "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training", 
+    "__opts__": null, 
+    "hadd_dataset": true, 
+    "use_tarball": true, 
+    "__opts___src": "VBFMVATrainingSamples.json", 
+    "queue": "1nd", 
+    "hadd_process": true, 
+    "batchSystem": "auto", 
+    "output": "output.root"
+}

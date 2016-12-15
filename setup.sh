@@ -150,7 +150,8 @@ git cms-merge-topic -u matteosan1:smearer_76X
 #git cherry-pick 5a028c0bd8fe8ea932ee602f2e82c455489f4ad1
 #git cherry-pick a2dc7fa601a13b43e79c118ba8cb746f8dd684ce
 #git cherry-pick 415903611957b5bd9f0b3f0c657cb903437db4f8
-
+echo "Setting up VID..."
+git cms-merge-topic ikrav:egm_id_80X_v1
 echo "Setting up weight and pat electron conversion..."
 git cms-addpkg CommonTools/UtilAlgos
 git cms-addpkg RecoEgamma/EgammaTools

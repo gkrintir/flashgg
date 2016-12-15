@@ -1,0 +1,8 @@
+{    
+    "processes" : {
+        "vbf_m125" : [ "/VBFHToGG_M125_13TeV_amcatnlo_pythia8/sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae/USER" ],
+        "gamJet" : [ "/GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8" ]
+        },
+
+    "cmdLine" : "campaign=RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2_Training"
+}

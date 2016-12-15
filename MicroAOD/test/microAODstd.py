@@ -28,7 +28,9 @@ process.RandomNumberGeneratorService.flashggRandomizedPhotons = cms.PSet(
         )
 
 #80x signal
-process.source = cms.Source("PoolSource",fileNames=cms.untracked.vstring("/store/mc/RunIISpring16MiniAODv2/GluGluHToGG_M125_13TeV_amcatnloFXFX_pythia8/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14_ext2-v1/10000/6A31A211-063B-E611-98EC-001E67F8F727.root")) # ggH 125 miniAODv2
+#process.source = cms.Source("PoolSource",fileNames=cms.untracked.vstring("file:/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/B292038E-2639-E611-8510-549F3525B154.root")) # ggH 125 miniAODv2
+
+process.source = cms.Source("PoolSource",fileNames=cms.untracked.vstring("/store/mc/RunIISpring16MiniAODv2/THQ_HToGG_13TeV-madgraph-pythia8_TuneCUETP8M1/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/20000/B292038E-2639-E611-8510-549F3525B154.root"))
 #process.source = cms.Source("PoolSource",fileNames=cms.untracked.vstring("/store/mc/RunIISpring16MiniAODv2/ttHJetToGG_M125_13TeV_amcatnloFXFX_madspin_pythia8_v2/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/80000/267A1DB4-3D3B-E611-9AD2-003048C559C4.root")) # ttH 125 miniAODv2
 
 #80x data
@@ -53,6 +55,7 @@ from flashgg.MicroAOD.flashggMicroAODOutputCommands_cff import microAODDefaultOu
 process.out = cms.OutputModule("PoolOutputModule", fileName = cms.untracked.string('myMicroAODOutputFile.root'),
                                outputCommands = microAODDefaultOutputCommand
                                )
+#process.out.outputCommands += ["keep *_source_*_LHEFile"]
 
 # All jets are now handled in MicroAODCustomize.py
 # Switch from PFCHS to PUPPI with puppi=1 argument (both if puppi=2)
@@ -89,6 +92,7 @@ process.e = cms.EndPath(process.out)
 
 
 from flashgg.MicroAOD.MicroAODCustomize import customize
+print customize.datasetName
 customize(process)
 
 if "DY" in customize.datasetName or "SingleElectron" in customize.datasetName or "DoubleEG" in customize.datasetName:

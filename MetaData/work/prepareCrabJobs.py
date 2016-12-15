@@ -175,6 +175,7 @@ if len(options.samples) == 0:
 else:
     sig  = options.samples["sig"]
     bkg  = options.samples["bkg"]
+    print 'bkg!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', bkg
     data = options.samples["data"]
 
 if options.lumiMask: options.lumiMask = os.path.abspath(options.lumiMask)
@@ -201,6 +202,7 @@ pilotSamples=[]
 if options.mkPilot:
     for group in sig,bkg,data:
         if len(group) > 0:
+            print 'mpika!!!!!!!!!!!!!!!!!!!'
             pilotSamples.append( group[0] )
 
 if options.checkIfOnT2:
@@ -305,10 +307,10 @@ if options.createCrabConfig:
             jobname = jobname.replace("reHLT_80X_mcRun2_asymptotic_v14-v1","reHLTasym16")
         if len(jobname) > 97:
             jobname = jobname.replace("_withHLT_80X_mcRun2_asymptotic_v14_ext1-v1","reHLTasym16")
-        if len(jobname) > 97:
-            print orig_jobname
-            print "-->", len(jobname), jobname
-            raise Exception
+        #if len(jobname) > 97:
+        #    print orig_jobname
+        #    print "-->", len(jobname), jobname
+        #    raise Exception
         #if len(jobname) > 97:
         #    print "jobname length: %d " % len(jobname)
         #    jobname = jobname[:97]

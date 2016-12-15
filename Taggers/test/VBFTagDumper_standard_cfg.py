@@ -11,7 +11,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1))
 process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32( 1 )
 process.source = cms.Source ("PoolSource",
-                             fileNames = cms.untracked.vstring("/store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISpring15-ReMiniAOD-BetaV7-25ns/Spring15BetaV7/VBFHToGG_M-125_13TeV_powheg_pythia8/RunIISpring15-ReMiniAOD-BetaV7-25ns-Spring15BetaV7-v0-RunIISpring15MiniAODv2-74X_mcRun2_asymptotic_v2-v1/151021_152809/0000/myMicroAODOutputFile_1.root"))
+                             fileNames = cms.untracked.vstring("root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/ferriff/flashgg/RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2/2_2_0/TTGG_0Jets_TuneCUETP8M1_13TeV_amcatnlo_madspin_pythia8/RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2-2_2_0-v0-RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/160707_145932/0000/myMicroAODOutputFile_1.root"))
 
 process.TFileService = cms.Service("TFileService",
                                    fileName = cms.string("VBFTagsDump.root"),
@@ -26,19 +26,19 @@ process.load("flashgg.Taggers.flashggTagSequence_cfi")
 process.load("flashgg.Taggers.flashggTagTester_cfi")
 
 # Use JetID
-process.flashggVBFMVA.UseJetID      = cms.untracked.bool(True)
-process.flashggVBFMVA.JetIDLevel    = cms.untracked.string("Loose")
+process.flashggVBFMVA.UseJetID      = cms.bool(True)
+process.flashggVBFMVA.JetIDLevel    = cms.string("Loose")
 
 # use custum TMVA weights
 process.flashggVBFMVA.vbfMVAweightfile = cms.FileInPath("flashgg/Taggers/data/Flashgg_VBF_CHS_STD_BDTG.weights.xml")
-process.flashggVBFMVA.MVAMethod        = cms.untracked.string("BDTG")
+process.flashggVBFMVA.MVAMethod        = cms.string("BDTG")
 
 # QCD Recovery 
 # process.flashggVBFMVA.merge3rdJet   = cms.untracked.bool(False)
 # process.flashggVBFMVA.thirdJetDRCut = cms.untracked.double(1.5)
 
 # combined MVA boundary set
-process.flashggVBFTag.Boundaries    = cms.untracked.vdouble(-2,0,2)
+process.flashggVBFTag.Boundaries    = cms.vdouble(-2,0,2)
 
 # set the VBF dumper
 process.vbfTagDumper = createTagDumper("VBFTag")
@@ -47,8 +47,8 @@ process.vbfTagDumper.dumpHistos    = True
 process.vbfTagDumper.dumpWorkspace = False
 
 # use the trigger-diphoton-preselection
-from PhysicsTools.PatAlgos.tools.helpers import massSearchReplaceAnyInputTag
-massSearchReplaceAnyInputTag(process.flashggTagSequence,cms.InputTag("flashggDiPhotons"),cms.InputTag("flashggPreselectedDiPhotons"))
+#from PhysicsTools.PatAlgos.tools.helpers import massSearchReplaceAnyInputTag
+#massSearchReplaceAnyInputTag(process.flashggTagSequence,cms.InputTag("flashggDiPhotons"),cms.InputTag("flashggPreselectedDiPhotons"))
 
 # get the variable list
 import flashgg.Taggers.VBFTagVariables as var

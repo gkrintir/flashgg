@@ -198,7 +198,6 @@ class LsfJob(object):
         
         if os.environ.get('X509_USER_PROXY',None):
             script += "export X509_USER_PROXY=%s\n" % os.environ['X509_USER_PROXY']
-                    
         # the user command
         script += cmd+"\n"
         
@@ -333,7 +332,8 @@ class WorkNodeJob(object):
         
         if self.job_outdir:
             script += "mkdir %s\n" % self.job_outdir
-
+        
+        script += "export EOS_MGM_URL=root://eosuser.cern.ch\n"
         script += 'echo "ls $X509_USER_PROXY"\n'
         script += 'ls $X509_USER_PROXY\n'
             

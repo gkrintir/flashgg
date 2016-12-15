@@ -1,0 +1,8 @@
+{
+    "processes" : {
+        "Data" : [
+            "/DoubleEG"
+        ]
+        },
+     "cmdLine" : "campaign=RunIISpring16DR80X-2_1_0-25ns_ICHEP16"
+}

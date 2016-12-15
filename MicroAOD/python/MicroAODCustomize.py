@@ -88,8 +88,8 @@ class MicroAODCustomize(object):
 
     # process customization
     def customize(self,process):
+        print '!!',self.processType
         self.parse()
-
         if self.puppi == 0:
             self.customizePFCHS(process)
             self.customizeRemovePuppi(process)
@@ -100,12 +100,15 @@ class MicroAODCustomize(object):
             self.customizePFCHS(process)
             self.customizePuppi(process)
         if self.processType == "data":
+            print 'mpika data !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
             self.customizeData(process)
             if "Mu" in customize.datasetName:
                 self.customizeDataMuons(process)
         elif self.processType == "signal":
+            print 'mpika signal !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
             self.customizeSignal(process)
         if self.processType == "background":
+            print 'mpika bkg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
             self.customizeBackground(process)
         if self.debug == 1:
             self.customizeDebug(process)

@@ -352,7 +352,7 @@ namespace flashgg {
                 }
 
                 weight = lumiWeight_;
-
+                std::cout << "weight" << weight << std::endl;
                 if( genInfo.isValid() ) {
                     const auto &weights = genInfo->weights();
                     // FIXME store alternative/all weight-sets

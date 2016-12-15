@@ -74,6 +74,16 @@
 </class>
 <class name="std::vector<flashgg::TTHHadronicTag>"/>
 <class name="edm::Wrapper<std::vector<flashgg::TTHHadronicTag> >"/>
+<class name="flashgg::THQLeptonicMVAResult" ClassVersion="0">
+  <version ClassVersion="12" checksum="585243665"/>
+</class>
+<class name="std::vector<flashgg::THQLeptonicMVAResult>"/>
+<class name="edm::Wrapper<std::vector<flashgg::THQLeptonicMVAResult> >"/>
+<class name="flashgg::THQLeptonicTag" ClassVersion="0">
+  <version ClassVersion="1" checksum="1563519760"/>
+</class>
+<class name="std::vector<flashgg::THQLeptonicTag>"/>
+<class name="edm::Wrapper<std::vector<flashgg::THQLeptonicTag> >"/>
 <class name="flashgg::VHEtTag" ClassVersion="13">
  <version ClassVersion="13" checksum="2125676410"/>
  <version ClassVersion="12" checksum="1192814105"/>

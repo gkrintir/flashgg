@@ -688,7 +688,7 @@ class SamplesManager(object):
         
         """
         catalog = self.readCatalog(True)
-        print primary
+        print 'pri', primary
         primary = primary.lstrip("/")
         if "/" in primary:
             primary,secondary,tier = primary.split("/")
@@ -699,11 +699,12 @@ class SamplesManager(object):
         totWeights = 0.
         for dataset,info in catalog.iteritems():
             empty,prim,sec,tier=dataset.split("/")
+            print empty, prim, sec, tier
             if prim == primary:
                 if secondary and sec != secondary:
                     continue
-                if found:
-                    raise Exception("More then one dataset matched the request: /%s/%s" % ( primary, str(secondary) ))
+                #if found:
+                #    raise Exception("More then one dataset matched the request: /%s/%s" % ( primary, str(secondary) ))
                 found = dataset
                 if prim in self.cross_sections_:
                     xsec = self.cross_sections_[prim]

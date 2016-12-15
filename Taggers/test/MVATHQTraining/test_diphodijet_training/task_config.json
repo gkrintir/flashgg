@@ -1,0 +1,80 @@
+{
+    "jobs": [
+        [
+            "cmsRun", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/VBFDiPhoDiJetMVA_Training.py", 
+                "maxEvents=1000", 
+                "useAAA=1", 
+                "campaign=RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2_Training", 
+                "processIdMap=/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/config.json", 
+                "dataset=/VBFHToGG_M125_13TeV_amcatnlo_pythia8/sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae/USER", 
+                "outputFile=/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER.root", 
+                "nJobs=1", 
+                "jobId=0"
+            ], 
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER_numEvent1000_histos_0.root", 
+            0, 
+            -1, 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/runJobs0", 
+                809053096
+            ]
+        ], 
+        [
+            "cmsRun", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/VBFDiPhoDiJetMVA_Training.py", 
+                "maxEvents=1000", 
+                "useAAA=1", 
+                "campaign=RunIISpring16DR80X-2_2_0-25ns_ICHEP16_MiniAODv2_Training", 
+                "processIdMap=/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/config.json", 
+                "dataset=/GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8", 
+                "outputFile=/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8.root", 
+                "nJobs=1", 
+                "jobId=0"
+            ], 
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8_numEvent1000_histos_0.root", 
+            0, 
+            -1, 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/runJobs1", 
+                809053102
+            ]
+        ]
+    ], 
+    "datasets_output": {
+        "GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8": [
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8.root", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8_numEvent1000_histos_0.root"
+            ]
+        ], 
+        "VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER": [
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER.root", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER_numEvent1000_histos_0.root"
+            ]
+        ]
+    }, 
+    "process_output": {
+        "vbf_m125": [
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_vbf_m125.root", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER_numEvent1000_histos_0.root"
+            ]
+        ], 
+        "gamJet": [
+            "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_gamJet.root", 
+            [
+                "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8_numEvent1000_histos_0.root"
+            ]
+        ]
+    }, 
+    "outputPfx": "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output", 
+    "last_job_id": 2, 
+    "output": [
+        "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_VBFHToGG_M125_13TeV_amcatnlo_pythia8_sethzenz-RunIISpring16DR80X-2_1_2-25ns_ICHEP16-2_1_2-v0-RunIISpring16MiniAODv1-PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_v3_ext1-v1-eb6bbc3cad299015f6746e16daa092ae_USER_numEvent1000_histos_0.root", 
+        "/afs/cern.ch/work/g/gkrintir/private/CMSSW_8_0_10/src/flashgg/Taggers/test/MVATHQTraining/test_diphodijet_training/output_GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUETP8M1_13TeV_Pythia8_numEvent1000_histos_0.root"
+    ]
+}

@@ -224,6 +224,7 @@ class JobConfig(object):
 
             
             isdata = self.processType == "data"
+
             if isdata or self.targetLumi > 0. or putarget:
                 ## look for analyzers which have lumiWeight as attribute
                 for name,obj in process.__dict__.iteritems():
@@ -235,6 +236,7 @@ class JobConfig(object):
                             wei = xsec["xs"]/float(totEvents)*self.targetLumi
                             wei *= xsec.get("br",1.)
                             wei *= xsec.get("kf",1.)
+                            print 'weight!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:', xsec["xs"], float(totEvents), self.targetLumi, wei
                             obj.lumiWeight = wei
 
                     if hasattr(obj,"intLumi"):
@@ -299,9 +301,11 @@ class JobConfig(object):
                 target = LumiList.LumiList(filename = self.lumiMask)
                 if lumisToSkip: 
                     target = target.__sub__(lumisToSkip)                    
+                print'!!!!!!!!!!!!!!!!!', target.getVLuminosityBlockRange()
                 process.source.lumisToProcess = target.getVLuminosityBlockRange()
 
-            if isdata:    
+            if isdata:
+                print 'mpika!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                 print process.source.lumisToProcess
             
         flist = []
